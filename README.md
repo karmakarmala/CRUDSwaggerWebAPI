@@ -1,5 +1,4 @@
 # CRUDSwaggerWebAPI
-
 This simple project creates a WebAPI to read and write device status of a printer for demonstration of how **Swagger** can be configured  in .Net Core Web API.
 
 ## Configuration Steps
@@ -68,3 +67,23 @@ UseSwagger & UseSwaggerUI in `Configure`
 
 2. Run the application & to view Swagger documention of your API
 
+![Swagger API Documentation](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/SwaggerAPI.png)
+
+ ## Test API
+    
+    
+  **1. GetStatus/DeviceName : No Record Found**
+
+![NotFound](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/getStatus_NotFound.png)
+
+   **2. GetStatus/DeviceName : Record Found**
+
+![OK](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/getStatus_Ok.png)
+
+  **3. GetAllDevices**
+
+![GetAll](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/GetAllDeviceStatus.png)
+
+  **4. AddDeviceStatus**
+
+![Addl](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/AddDevice.png)
