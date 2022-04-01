@@ -66,8 +66,7 @@ namespace WebAPIApp
                 app.UseSwaggerUI(c=>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger CRUD API v1");
-                }
-                );
+                });
             }
 
             app.UseHttpsRedirection();
