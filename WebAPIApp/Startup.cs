@@ -27,6 +27,8 @@ namespace WebAPIApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //Swagger Settings
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
@@ -59,6 +61,8 @@ namespace WebAPIApp
                 {
                     c.SerializeAsV2 = true;
                 });
+
+                //Swagger Settings
                 app.UseSwaggerUI(c=>
                 {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger CRUD API v1");

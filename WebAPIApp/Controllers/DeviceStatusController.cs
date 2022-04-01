@@ -22,7 +22,7 @@ namespace WebAPIApp.Controllers
             _logger = logger;
         }
 
-        // GET: api/DeviceStatus/GetStatus/DeviceName
+        // GET: DeviceStatus/GetStatus/DeviceName
         [HttpGet("GetStatus/{DeviceName}")]
         public IActionResult GetStatus(string DeviceName)
         {
@@ -40,6 +40,7 @@ namespace WebAPIApp.Controllers
           
         }
 
+        // GET: GetAllDeviceStatus
         [HttpGet("GetAllDeviceStatus")]
         public IEnumerable<DeviceSensorDetails> GetAllDeviceStatus()
         {
@@ -62,6 +63,7 @@ namespace WebAPIApp.Controllers
             return _deviceSensorDetails;
         }
 
+        //Post : AddDeviceStatus/DeviceDetails
         [HttpPost("AddDeviceStatus")]
         public IActionResult AddDeviceStatus(DeviceSensorDetails sensorDetails)
         {
@@ -73,7 +75,6 @@ namespace WebAPIApp.Controllers
             _deviceSensorDetails.Add(sensorDetails);
             return Ok("Added New Status");
         }
-
 
  
     }
