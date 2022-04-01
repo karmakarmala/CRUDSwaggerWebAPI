@@ -1,37 +1,96 @@
-## Welcome to GitHub Pages
+# How to use Swagger in .Net Core 
 
-You can use the [editor on GitHub](https://github.com/karmakarmala/CRUDSwaggerWebAPI/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A WebAPI to read and write device status of a printer for demonstration of how **Swagger** can be configured  in .Net Core Web API.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Configuration Steps
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+1. Install **Swashbuckle.AspNetCore** package from Nuget package manager.
+2. Add the below code in Startup.cs 
+  
+  AddSwaggerGen in `ConfigureServices`
+  
+```sh
+  public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Swagger CRUD API",
+                    Description = "An ASP.NET Core Web API for managing Device Status of Printer",
+                    TermsOfService = new Uri("https://example.com/terms"),
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Example Contact",
+                        Url = new Uri("https://example.com/contact")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Example License",
+                        Url = new Uri("https://example.com/license")
+                    }
+                });
+            });
+        }
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+UseSwagger & UseSwaggerUI in `Configure`
 
-### Jekyll Themes
+```sh
+                app.UseSwagger(c=>
+                {
+                    c.SerializeAsV2 = true;
+                });
+                app.UseSwaggerUI(c=>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger CRUD API v1");
+                });
+```
+3. Change the launchUrl in `launchSettings.json` to **swagger/index.html**
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/karmakarmala/CRUDSwaggerWebAPI/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```sh
+ "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger/index.html",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+```
 
-### Support or Contact
+## Exceution Steps
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+1. Make sure all the attributes are mentioned in Controller **HttpGet HttPost etc** nor you will receive below error
+
+![Error](https://www.benday.com/wp-content/uploads/2020/12/image.png)
+
+2. Run the application & to view Swagger documention of your API
+
+![Swagger API Documentation](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/SwaggerAPI.png)
+
+ ## Test API
+    
+    
+  **1. GetStatus/DeviceName : No Record Found**
+
+![NotFound](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/getStatus_NotFound.png)
+
+   **2. GetStatus/DeviceName : Record Found**
+
+![OK](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/getStatus_Ok.png)
+
+  **3. GetAllDevices**
+
+![GetAll](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/GetAllDeviceStatus.png)
+
+  **4. AddDeviceStatus**
+
+![Addl](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/AddDevice.png)
+
+
+
+```
+
+
