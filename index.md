@@ -68,26 +68,26 @@ UseSwagger & UseSwaggerUI in `Configure`
 
 2. Run the application & to view Swagger documention of your API
 
-![Swagger API Documentation](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/SwaggerAPI.png)
+![Swagger API Documentation](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/gh-pages/Resource/AddDevice.png)
 
  ## Test API
     
     
   **1. GetStatus/DeviceName : No Record Found**
 
-![NotFound](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/getStatus_NotFound.png)
+![NotFound](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/gh-pages/Resource/getStatus_NotFound.png)
 
    **2. GetStatus/DeviceName : Record Found**
 
-![OK](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/getStatus_Ok.png)
+![OK](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/gh-pages/Resource/getStatus_Ok.png)
 
   **3. GetAllDevices**
 
-![GetAll](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/GetAllDeviceStatus.png)
+![GetAll](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/gh-pages/Resource/GetAllDeviceStatus.png)
 
   **4. AddDeviceStatus**
 
-![Addl](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/master/WebAPIApp/Resource/AddDevice.png)
+![Addl](https://github.com/karmakarmala/CRUDSwaggerWebAPI/blob/gh-pages/Resource/AddDevice.png)
 
 
 
