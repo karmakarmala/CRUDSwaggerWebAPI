@@ -1,6 +1,27 @@
-# How to use Swagger in .Net Core 
+# ASP .Net Core API with Swagger Documentation
 
-A WebAPI to read and write device status of a printer for demonstration of how **Swagger** can be configured  in .Net Core Web API.
+In this article I am going to show the steps how to configure **Swagger**  in .Net Core Web API.
+
+The WebAPI for demosntration purpose a simple read and write CRUD project to store the device status of a printer.
+You can find the complete standalone code here [CRUDSwaggerWebAPI](https://github.com/karmakarmala/CRUDSwaggerWebAPI)
+
+## What is Swagger?
+
+Swagger is a powerful yet easy-to-use suite of API developer tools for teams and individuals, enabling development across the entire API lifecycle, from design and documentation, to test and deployment. Check here for more info [Swagger](https://swagger.io/)
+
+### Purpose
+
+- Minimize the amount of work needed to connect decoupled services.
+- Reduce the amount of time needed to accurately document a service.
+
+The two main OpenAPI implementations for .NET are **Swashbuckle** and **NSwag**, here the implementation is using Swashbuckle
+
+### Top Alternatives
+
+1. Postman
+2. Apigee
+3. SoapUI
+
 
 ## Configuration Steps
 
@@ -70,7 +91,7 @@ UseSwagger & UseSwaggerUI in `Configure`
 
 ![Swagger API Documentation](/Resource/AddDevice.png)
 
-## Test API
+## Testing API
     
   **1. GetStatus/DeviceName : No Record Found**
 
