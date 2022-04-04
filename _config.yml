@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 title: Learn Swagger
 description: Bookmark this to keep an eye on my project updates!
+Access-Control-Allow-Origin: *
