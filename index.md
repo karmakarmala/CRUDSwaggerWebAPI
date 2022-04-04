@@ -70,8 +70,7 @@ UseSwagger & UseSwaggerUI in `Configure`
 
 ![Swagger API Documentation](/Resource/AddDevice.png)
 
- ### Test API
-    
+## Test API
     
   **1. GetStatus/DeviceName : No Record Found**
 
